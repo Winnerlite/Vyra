@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>Vyra - Smart Intercity Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; font-family: 'Inter', sans-serif; background: black; color: #E6E6FA; }
+        .btn { background: #9C27B0; color: white; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; }
+        .navbar { display: flex; align-items: center; padding: 20px; background: black; border-bottom: 1px solid #673AB7; }
+        
+        
+        .logo { font-size: 2em; font-weight: bold; color: #9C27B0; margin-right: 20px; }
+        .nav-links a { color: #E6E6FA; text-decoration: none; margin: 0 15px; }
+        
+    
+        /* Existing styles remain mostly the same */
+        
+        /* New Hero Section Styles */
+        .hero {
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+       /* Premium Heading Style */
+.hero h1 {
+    font-size: 3.5em;
+    color: #d6aaff; /* Premium soft purple */
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1.2px; /* Subtle letter spacing */
+    text-shadow: 0 0 10px rgba(214, 170, 255, 0.7), 0 0 20px rgba(138, 43, 226, 0.5); /* Premium glowing effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.hero h1:hover {
+    transform: scale(1.03); /* Slight upscale on hover */
+    text-shadow: 0 0 20px rgba(214, 170, 255, 0.9), 0 0 40px rgba(138, 43, 226, 0.6);
+}
+
+/* Premium Subtext Style */
+.hero p {
+    font-size: 1.4em;
+    color: #e0c3fc; /* Softer premium color */
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.8px;
+    text-shadow: 0 0 5px rgba(224, 195, 252, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Subtext Hover Effect */
+.hero p:hover {
+    text-shadow: 0 0 10px rgba(224, 195, 252, 0.8), 0 0 20px rgba(138, 43, 226, 0.5);
+}
+        
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Premium Button Style */
+.main-cta {
+    background: linear-gradient(135deg, #b084ff, #8a2be2); /* Gradient for luxury feel */
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(176, 132, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.main-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(176, 132, 255, 0.9), 0 0 40px rgba(138, 43, 226, 0.7);
+}
+
+/* Click Effect */
+.main-cta:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 10px rgba(176, 132, 255, 0.6);
+}
+        
+        .app-cta {
+            position: relative;
+            background: #333;
+            color: #666;
+            padding: 15px 40px;
+            border-radius: 30px;
+            cursor: not-allowed;
+        }
+        
+        .coming-soon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: gold;
+            color: black;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+        
+        /* New Features Section */
+        .section-heading {
+            text-align: center;
+            font-size: 2.5em;
+            color: #b084ff;
+            margin: 60px 0 40px;
+        }
+        
+        .community-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.community-text {
+    flex: 1;
+    min-width: 300px;
+    color: white;
+    padding: 20px;
+}
+
+.community-text h3 {
+    font-size: 2.5em;
+    color: #b084ff;
+    margin-bottom: 20px;
+}
+
+.community-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e6e6fa;
+}
+
+.community-image {
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+    overflow: hidden;
+    max-width: 100%; /* Ensures it doesn't exceed the page width */
+    height: 300px; /* Adjust this based on your preference */
+}
+
+.community-image img {
+    max-width: 100%; /* Ensures it scales properly */
+    max-height: 100%; /* Prevents it from going beyond the div */
+    object-fit: contain; /* Keeps the image fully visible */
+}
+
+/* Glow Animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(176, 132, 255, 0.5), 0 0 20px rgba(176, 132, 255, 0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(214, 170, 255, 0.7), 0 0 30px rgba(214, 170, 255, 0.5);
+    }
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .community-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .community-image {
+        max-width: 90%;
+    }
+
+    .community-img {
+        max-width: 100%; /* Ensures the image scales down */
+        height: auto; /* Maintains aspect ratio */
+    }
+}
+        /* Waitlist Section */
+        .waitlist-section {
+            background: #1a1a1a;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .waitlist-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .notify-button {
+    width: 20px;
+    font-size: 1.1em;
+    margin-top: 20px; /* Adds spacing between input and button */
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #b084ff;
+    color: black;
+    font-weight: bold;
+}
+
+      .email-input {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 30px;
+    background: #1a1a1a; /* Darker premium background */
+    border: 2px solid #b084ff;
+    color: white;
+    font-size: 1.1em;
+    outline: none; /* Removes default browser focus */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Premium Effect When Clicked (Focus) */
+.email-input:focus {
+    background: #222; /* Slightly brighter when active */
+    border-color: #d6aaff; /* Lighter purple border */
+    box-shadow: 0 0 15px #b084ff, 0 0 30px #d6aaff; /* Glowing premium effect */
+    transform: scale(1.02); /* Slight scale effect */
+}
+        
+       /* Container for clock and text */
+.info-container {
+    display: flex;
+    flex-direction: column; /* Stack elements (text on top, clock below) */
+    align-items: center;
+    max-width: 900px;
+    margin: 20px auto; /* Keep it under Hero Section */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Analysis Text Styling */
+.analysis-text {
+    background: rgba(32, 32, 32, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #3a3a3a;
+    font-family: 'Playfair Display', serif;
+    color: #b084ff;
+    font-size: 1.2em;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px; /* Add space between text and clock */
+}
+
+/* Clock Styling */
+.clock-card {
+    background: linear-gradient(145deg, #202020, #3a3a3a);
+    color: #b084ff;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 29px;
+    border-radius: 12px;
+    text-align: center;
+    width: fit-content;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), -4px -4px 8px rgba(58, 58, 58, 0.8);
+    letter-spacing: 1.5px;
+    margin-top: 5px; /* Increase this value to push the clock lower */
+}
+
+}
+
+/* Logo Container - Remove extra space */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0; /* Reduce padding */
+    margin: 0 auto; /* Center without extra margin */
+   
+    margin-top: 0px; /* Reduce space above */
+    padding-top: 0px; /* Remove extra padding */
+}
+
+
+/* Logo Image */
+.logo-img {
+    max-width: 300px; /* Adjust logo size */
+    height: auto;
+    
+    margin-top: 0px; /* Reduce space above */
+    padding-top: 0px; /* Remove extra padding */
+}
+
+/* Footer Logo */
+.footer-logo {
+    max-width: 120px; /* Adjust size */
+    height: auto;
+    margin-bottom: 0px; /* Adds space between logo and text */
+}
+
+.community-img {
+    width: 100% !important;  /* Forces it to fit the container */
+    max-width: 400px !important; /* Ensures it doesn't get too large */
+    height: auto !important;  /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures no cropping */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(176, 132, 255, 0.6);
+}
+
+h1 {
+       animation: fadeInUp 1s ease-out;
+   }
+   @keyframes fadeInUp {
+       from { opacity: 0; transform: translateY(20px); }
+       to { opacity: 1; transform: translateY(0); }
+   }
+   
+   h1 {
+       background: linear-gradient(90deg, #b084ff, #d6aaff);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+   }
+   
+ /* Premium Review Introduction Text */
+        .review-intro {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #b084ff;
+            text-shadow: 0 0 10px rgba(176, 132, 255, 0.8);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease-in-out forwards;
+            margin-top: 40px;
+            padding: 10px 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .faq-heading {
+            font-size: 2.5em;
+            color: #b084ff;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, #1a1a1a, #262626);
+            color: white;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(176, 132, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 0 15px rgba(176, 132, 255, 0.6);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #b084ff;
+        }
+
+        .faq-answer {
+            font-size: 1.2em;
+            color: #ddd;
+            margin-top: 10px;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-icon {
+            font-size: 1.3em;
+            color: #b084ff;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Fade-in effect */
+        .faq-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Divider Line */
+.divider-line {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #b084ff, transparent);
+    margin: 50px auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* CTA Buttons for the Advanced plan section and the community section respectively*/
+.disabled-btn {
+    position: relative;
+    background: #333;
+    color: #888;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: not-allowed;
+    text-align: center;
+    border: 2px solid #b084ff;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.disabled-btn:hover {
+    background: #444;
+    color: #999;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: gold;
+    color: black;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Default styling applies to large screens (1440px and above) */
+
+/* Base styles already included in your file, so now let's adjust for specific devices */
+
+/* For very small devices (320px - 375px) */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .main-cta, .app-cta {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .community-section {
+        padding: 20px 10px;
+    }
+
+    .waitlist-section h2 {
+        font-size: 1.8em;
+    }
+
+    .email-input {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .waitlist-form button {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    .clock-card {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+}
+
+/* For small devices (375px - 435px) */
+@media (min-width: 376px) and (max-width: 435px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .main-cta, .app-cta {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+
+    .community-section {
+        padding: 30px 15px;
+    }
+
+    .waitlist-section h2 {
+        font-size: 2em;
+    }
+
+    .clock-card {
+        font-size: 1.8em;
+    }
+}
+
+/* For tablets (768px) */
+@media (min-width: 436px) and (max-width: 768px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.3em;
+    }
+
+    .main-cta, .app-cta {
+        padding: 15px 40px;
+        font-size: 1.2em;
+    }
+
+    .community-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .community-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .waitlist-section h2 {
+        font-size: 2.2em;
+    }
+
+    .email-input {
+        width: 90%;
+    }
+
+    .clock-card {
+        font-size: 2em;
+    }
+}
+
+/* For medium devices (1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3.5em;
+    }
+
+    .hero p {
+        font-size: 1.4em;
+    }
+
+    .main-cta, .app-cta {
+        padding: 15px 50px;
+        font-size: 1.3em;
+    }
+
+    .community-section {
+        gap: 30px;
+    }
+
+    .waitlist-section h2 {
+        font-size: 2.5em;
+    }
+
+    .clock-card {
+        font-size: 2.5em;
+    }
+}
+
+/* For large desktops (1440px and beyond) */
+@media (min-width: 1025px) {
+    .hero h1 {
+        font-size: 4em;
+    }
+
+    .hero p {
+        font-size: 1.6em;
+    }
+
+    .main-cta, .app-cta {
+        padding: 20px 60px;
+        font-size: 1.4em;
+    }
+
+    .community-section {
+        gap: 40px;
+    }
+
+    .waitlist-section h2 {
+        font-size: 3em;
+    }
+
+    .clock-card {
+        font-size: 3em;
+    }
+}
+ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.start-btn {
+    position: relative;
+    background: #333; /* Darker background */
+    padding: 10px 30px; /* Smaller padding */
+    border-radius: 40px; /* Reduced roundness */
+    font-size: 1em; /* Smaller font */
+    font-weight: 600; /* Bold but not too heavy */
+    text-align: center;
+    border: 2px solid #b084ff; /* Purple border */
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+    display: inline-block;
+    box-shadow: 0px 0px 8px rgba(176, 84, 255, 0.5); /* Subtle glow */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    
+    /* Clean & Bold Premium Font */
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+/* Hover Effect */
+.start-btn:hover {
+    background: #2c2c2c;
+    border-color: #d6aaff;
+    box-shadow: 0px 0px 12px rgba(214, 170, 255, 0.7);
+    transform: scale(1.03);
+}
+
+/* Click Effect */
+.start-btn:active {
+    transform: scale(0.96);
+    box-shadow: inset 0px 0px 8px rgba(176, 84, 255, 0.4);
+}
+    </style>
+</head>
+<body>
+     <!-- Logo Section (Above Introduction Block) -->
+<div class="logo-container">
+    <img src="https://i.ibb.co/ycsBvPZW/VyraLogo.png" alt="Vyra Logo" class="logo-img">
+</div>
+
+   
+    <!-- Existing clock and navigation code remains same -->
+
+
+<!-- The existing clock card div follows -->
+
+    <!-- New Hero Section -->
+    <div class="hero">
+    <h1><i>Introducing</i> Vyra</h1>
+    <p>Vyra uses real-time data and algorithms to help intercity travelers efficiently plan their journey before leaving home.</p>
+    <div class="cta-container">
+        <a href="start.html" target="_blank">
+            <button class="main-cta">Try Vyra Basic</button>
+        </a>
+        <div class="app-cta">
+            <div class="coming-soon">Coming Soon</div>
+            Get App
+        </div>
+    </div>
+</div>
+    
+<!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+
+
+<!-- Section Below Introduction (Clock + AI Analysis Text) -->
+<!-- Section Below Introduction (Text on Top, Clock Below) -->
+<div class="info-container">
+    <!-- Vyra AI Analysis Text (Now First) -->
+    <div class="analysis-text">
+        
+        <p>
+            <i class="fas fa-brain"></i> Vyra analyzes thousands of customer reviews and employs AI algorithms  to match you with 
+            the ideal intercity service for your prioritized needs.
+        </p>
+       
+      
+      
+        <div style="position: fixed; top: 120px; left: 50%; transform: translateX(-50%); text-align: center; width: 80%; max-width: 800px; z-index: 1001;">
+    <h1 style="color: #000000
+     <!-- For Feature heading to move down-->
+  style="top: 120px;"
+              font-size: 2.8em; 
+              margin: 0; 
+              font-family: 'Playfair Display', serif;
+              text-shadow: 0 4px 8px rgba(176, 132, 255, 0.3);
+              letter-spacing: 1.5px;
+              background: linear-gradient(90deg, #b084ff, #d6aaff);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;">
+        Features
+    </h1>
+</div>
+    </div>
+    
+    
+    
+
+        <!-- Review Introduction Card (Newly Added) -->
+    <div class="review-intro">
+        Real-time statistics of transport services performance based on customer data and algorithm.
+    </div>
+    
+
+<!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+
+
+    <!-- Clock (Now Below the Text) -->
+    <div class="clock-card" id="clock-card">
+        <div id="clock"></div>
+    </div>
+</div>
+
+
+    <!-- Existing Transport Metrics Code Here -->
+    
+
+    <title>Transport Metrics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #000000;
+            background: linear-gradient(145deg, #161616, #1e1e1e);
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+            margin: 10px;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 19px;
+            box-shadow: 4px 4px 8px #0c0c0c, -4px -4px 8px #262626;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .card img {
+            max-width: 150px;
+            margin-right: 20px;
+            padding: 20px;
+        }
+
+        .metrics-container {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            text-align: left;
+        }
+
+        .metric {
+            color: #b084ff;
+        }
+
+        .stars {
+            color: gold;
+        }
+        
+        
+
+          .clock-card {
+    
+    left: 100%; /* Centers the clock horizontally */
+    transform: translateX(-1%); /* Centers it perfectly */
+    background: linear-gradient(145deg, #202020, #3a3a3a); /* Premium gradient */
+    color: #b084ff; /* Premium text color */
+    font-weight: bold;
+    font-size: 32px; /* Larger font size for readability */
+    padding: 20px 40px;
+    border-radius: 12px;
+    text-align: center;
+    width: fit-content; /* Keeps the clock size tight */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), -4px -4px 8px rgba(58, 58, 58, 0.8); /* Premium shadow */
+    animation: glow 1.5s infinite alternate; /* Subtle glow animation */
+    letter-spacing: 1.5px; /* Improves readability */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    
+}
+
+
+/* Glow effect */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #b084ff, 0 0 20px #b084ff, 0 0 30px #b084ff;
+    }
+    to {
+        box-shadow: 0 0 20px #d6aaff, 0 0 30px #d6aaff, 0 0 40px #d6aaff;
+    }
+}
+
+/* Add padding to body to prevent overlap with the clock */
+body {
+    padding-top: 100px;
+    padding-bottom: 100px
+   0px; /* Adjust padding to account for clock height */
+    background-color: #121212; /* Dark premium background */
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+    <style>
+   .metric {
+    display: flex;
+    align-items: center; /* Align text and stars vertically */
+    justify-content: space-between;
+    gap: 10px; /* Optional: Space between the label and stars */
+}
+
+.metric span:first-child {
+    min-width: 150px; /* Adjust this width to match your longest label */
+    text-align: left; /* Align text inside the label area */
+}
+
+.stars {
+    display: flex;
+    gap: 2px; /* Add spacing between stars */
+    white-space: nowrap; /* Prevent stars from wrapping */
+}
+
+
+</style>
+   
+</head>
+<body>
+     
+    
+    
+    <div id="cards-container">
+
+<!Peacemass!>
+    <div class="card">
+       <img src="https://i.ibb.co/5hXDcq5/images-7.jpg" alt="images-7" border="0">
+        <div class="metrics-container">
+            <div class="metric">Customer Service  <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+            <div class="metric">Comfort <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+            <div class="metric">Customer Care  <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+            <div class="metric">Average Pricing <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+            <div class="metric">Customer Ratings  <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+            <div class="metric">
+    Customer Satisfaction 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+        </div>
+    </div>
+
+<!Libra!>
+    <div class="card">
+        <img src="https://i.ibb.co/wKRrKtp/test-10.png" alt="test-10" border="0">
+        <div class="metrics-container">
+            <div class="metric">Customer Service  <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+            <div class="metric">Comfort  <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+            <div class="metric">Customer Care  <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+            <div class="metric">Average Pricing <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+            <div class="metric">
+    Customer Ratings 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+            
+            <div class="metric">
+    Customer Satisfaction 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+             </div>
+    </div>
+    
+    <!Gig!>
+    <div class="card">
+  <img src="https://i.ibb.co/dKmkMGJ/images-11.png" alt="images-11" border="0">
+    <div class="metrics-container">
+        <div class="metric">Customer Service <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+        <div class="metric">Comfort <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+        <div class="metric">Customer Care <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+        <div class="metric">Average Pricing <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+        <div class="metric">Customer Ratings <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+        
+        
+    </div>
+</div>
+
+<!Chisco!>
+<div class="card">
+   <img src="https://i.ibb.co/b7Yykmb/images-12.png" alt="images-12" border="0">
+    <div class="metrics-container">
+       <div class="metric">
+    Customer Service: 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+        <div class="metric">
+    Comfort 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+        <div class="metric">
+    Customer care 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+        <div class="metric">
+    Average Pricing 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+    </div>
+
+<div class="metric">
+    Customer Ratings 
+    <span class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </span>
+</div>
+</div>
+    </div>
+</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const dayOfWeek = daysOfWeek[now.getDay()];
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            document.getElementById("clock").textContent = `${dayOfWeek}, ${date}, ${time}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+        
+        
+        ///To make the clock padding always on stick
+    document.addEventListener("DOMContentLoaded", function () {
+        const clock = document.querySelector('.clock-card');
+        const clockHeight = clock.offsetHeight;
+        document.body.style.paddingTop = `${clockHeight + 20}px`; // Add 20px for spacing
+    });
+
+document.addEventListener("DOMContentLoaded", function () {
+        // Function to generate a daily seed
+        function getDailySeed() {
+            const now = new Date();
+            return now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+        }
+
+        // Shuffle function using a seed
+        function seededShuffle(array, seed) {
+            const result = [...array];
+            let random = seed;
+            for (let i = result.length - 1; i > 0; i--) {
+                random = (random * 9301 + 49297) % 233280;
+                const j = Math.floor((random / 233280) * (i + 1));
+                [result[i], result[j]] = [result[j], result[i]];
+            }
+            return result;
+        }
+
+        // Randomize cards and metrics
+        function randomizeContent() {
+            const seed = getDailySeed();
+            
+            // Randomize cards
+            const cardsContainer = document.getElementById('cards-container');
+            const cards = Array.from(cardsContainer.children);
+            const shuffledCards = seededShuffle(cards, seed);
+            cardsContainer.innerHTML = ''; // Clear existing cards
+            shuffledCards.forEach(card => cardsContainer.appendChild(card));
+
+            // Randomize metrics within each card
+            shuffledCards.forEach((card, index) => {
+                const metricsContainer = card.querySelector('.metrics-container');
+                const metrics = Array.from(metricsContainer.children);
+                const shuffledMetrics = seededShuffle(metrics, seed + index); // Slightly alter seed for each card
+                metricsContainer.innerHTML = ''; // Clear existing metrics
+                shuffledMetrics.forEach(metric => metricsContainer.appendChild(metric));
+            });
+        }
+
+        // Run the randomization
+        randomizeContent();
+  });
+        
+
+    
+    function adjustFontSize() {
+        const baseWidth = 1366; // Your original design width
+        const screenWidth = window.innerWidth;
+
+        // Font size multiplier (Increase this to make fonts larger overall)
+        const multiplier = 2.9; // 1.0 is default, increase to enlarge fonts globally
+
+        // Calculate the scaling factor based on screen width
+        const scaleFactor = (screenWidth / baseWidth) * multiplier;
+
+        // Adjust the root font size
+        document.documentElement.style.fontSize = `${16 * scaleFactor}px`; // Base font size = 16px
+    }
+
+    // Call adjustFontSize on load and when the window is resized
+    window.addEventListener('load', adjustFontSize);
+    window.addEventListener('resize', adjustFontSize);
+</script>
+  
+
+    <!-- Advanced Metrics CTA -->
+    <div style="text-align: center; margin: 40px 0;">
+        <div style="position: relative; display: inline-block;">
+            <button class="app-cta" style="padding: 15px 60px;">
+                <div class="coming-soon">Coming Soon</div>
+                Advanced Metrics
+            </button>
+        </div>
+    </div>
+
+
+<!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+
+
+
+<div class="community-section">
+    <div class="community-text">
+        <h1 style="font-size: 3em; color: #b084ff; margin-bottom: 10px;">Vyra Basic</h1>
+        <p style="font-size: 1.2em; line-height: 1.6; color: #888;">
+            Get quick and fast help on which Intercity services will meet your travel appetite.
+        </p>
+        <p style="font-size: 1.2em; line-height: 1.6; color: #888;">
+            Answer a few questions to find the best option tailored for you.
+        </p>
+    </div>
+
+    <!-- Start Button -->
+    <a href="start.html" class="start-btn">Start</a>
+</div>
+
+        
+        <!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+
+    
+    <div class="community-section">
+    <div class="community-text">
+        <h1 style="font-size: 3em; color: #b084ff; margin-bottom: 10px;">Interactive Travel Community</h1>
+        <p style="font-size: 1.2em; line-height: 1.6; color: #888;">
+            Join the growing community of smart travelers. Share your experiences, read authentic reviews, 
+            and connect with fellow passengers. Help us build the most reliable transportation network in Nigeria.
+        </p>
+
+        <!-- Join Button -->
+        <div class="disabled-btn">
+            <span class="coming-soon">Coming Soon</span>
+            Join
+        </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="community-image">
+        <img src="https://i.ibb.co/1tv9WYqC/Vyra.webp" alt="Vyra">
+    </div>
+</div>
+
+    
+<!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+
+<div class="community-section">
+        <div class="community-text">
+            <h1 style="font-size: 3em; color: #b084ff; margin-bottom: 10px;">Advanced Trip Planning </h1>
+            <p style="font-size: 1.2em; line-height: 1.6; color: #888;">
+                Vyra Advanced allows travelers plan trips all the way from home to the bus park in few clicks of a button. <p style="font-size: 1.2em; line-height: 1.6; color: #888;">Travellers can find out how much to spend for trips, compare all services transiting to their specific location from their state and choose services based on priorities. Vyra Advanced trip offers a cab booking, taking travellers from home to transit station.
+            </p>
+        </div>
+        
+       <!-- Explore Button --!>
+        <div class="disabled-btn">
+            <span class="coming-soon">Coming Soon</span>
+            Explore
+        </div>
+    </div>
+
+        
+        <!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+    
+      <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2 class="faq-heading">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What is Vyra?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                Vyra(viral) is an Artificial intelligent platform that gives travelers autonomy and real-time metrics on intercity transport services in Nigeria 
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How does Vyra determine Intercity transport service ratings and data?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                Vyra uses a combination of customer reviews and years of intercity transport algorithmic-based data analysis to generate accurate ratings.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is Vyra free to use?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                Yes! Vyra is completely free for users who want to check transport service metrics.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I submit my own transport reviews?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                Absolutely! You can submit your own experiences and ratings directly on the Vyra platform.
+            </div>
+            </div>
+            
+            <div class="faq-item">
+            <div class="faq-question">
+                Who can use Vyra?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+               Any one can use Vyra. Specifically the Travelers.
+            </div>
+        </div>
+    </div>
+    <!-- Stylish Divider Line -->
+<div class="divider-line"></div>
+
+  
+<script>
+        // Toggle FAQ Answers
+        document.querySelectorAll(".faq-item").forEach(item => {
+            item.addEventListener("click", () => {
+                item.classList.toggle("active");
+            });
+        });
+    </script>
+    
+    <!-- Waitlist Section -->
+<div class="waitlist-section">
+    <h2 style="color: #b084ff; font-size: 2.5em; margin-bottom: 20px;">Join the Future of Inter City Travel in Nigeria</h2>
+    <p style="color: #888; font-size: 1.2em; margin-bottom: 40px;">
+        Vyra is going full in a couple of months. Be among the first to experience Vyra's full capabilities and get early access to Vyra's features free.
+    </p>
+    <div class="waitlist-form">
+        <!-- FormSubmit Integration -->
+        <form id="waitlist-form" action="https://formsubmit.co/winnerukoh@gmail.com" method="POST">
+            <!-- Hidden input to disable CAPTCHA -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Email input field with name attribute -->
+            <input type="email" name="email" class="email-input" placeholder="Enter your email for exclusive access" required>
+
+            <!-- Submit button -->
+            <button type="submit" class="main-cta" style="width: 200px; font-size: 1.1em;">Notify Me</button>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript Redirect (Ensures Form Submission & Then Redirects) -->
+<script>
+    document.getElementById("waitlist-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Stop default form submission
+        const form = this;
+
+        setTimeout(() => {
+            form.submit(); // Ensure form submission happens after a short delay
+        }, 1000); // Delay form submission slightly for reliability
+
+        setTimeout(() => {
+            window.location.href = "thankyoupage.html"; // Redirect after 3 seconds
+        }, 2000);
+    });
+</script>
+    <!-- Existing Footer Code Here -->
+    
+  
+        <!-- Footer -->
+<div style="background: #111; color: #E6E6FA; padding: 40px 20px; text-align: center;">
+    <!-- Replace text with logo -->
+    <img src="https://i.ibb.co/ycsBvPZW/VyraLogo.png" alt="Vyra Logo" class="footer-logo">
+
+    <p style="margin: 20px 0;">Intercity Travel, Simplified</p>
+
+    <div style="margin: 20px 0;">
+        <a href="#" style="color: #E6E6FA; margin: 0 10px;">About Vyra</a>
+        <a href="#" style="color: #E6E6FA; margin: 0 10px;">Partners</a>
+       
+    </div>
+
+    <div style="margin-top: 20px;">
+        🔒 Secure Payments | 📞 24/7 Support
+    </div>
+
+    <!-- Privacy Policy -->
+    <p style="margin-top: 20px; font-size: 0.9em; color: #888;">
+        Vyra Technologies is compliant with the Nigerian Privacy Policy Laws.
+    </p>
+
+    <!-- Contact Vyra (Clickable but no email shown) -->
+    <p style="font-size: 0.9em; color: #888;">
+        <a href="mailto:YouNetworkdev@hotmail.com" style="color: #b084ff; text-decoration: none;">Contact Vyra</a>
+    </p>
+    
+    
+</div>
+</body>
+</html>
