@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Vyra Waitlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #E6E6FA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .thank-you-container {
+            background: linear-gradient(145deg, #1a1a1a, #262626);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6), -4px -4px 10px rgba(32, 32, 32, 0.8);
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #b084ff;
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #d6d6d6;
+        }
+
+        .return-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            background: #b084ff;
+            color: black;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .return-button:hover {
+            background: #9C27B0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <h1>Welcome to Intercity Travel at Your Fingertips</h1>
+        <p>
+            You are now part of a unique group of travelers who will be alerted when Vyra is launched and be able to use for free.
+            We look forward to shaping your future travel experiences.
+        </p>
+        <a href="index.html" class="return-button">Return to Home</a>
+    </div>
+
+</body>
+</html>
