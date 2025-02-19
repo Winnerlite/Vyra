@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Vyra - Smart Intercity Travel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+    max-width: 768px; /* Limits the content width */
+    margin: 0 auto; /* Centers the content */
+}
         body { margin: 0; font-family: 'Inter', sans-serif; background: black; color: #E6E6FA; }
         .btn { background: #9C27B0; color: white; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; }
         .navbar { display: flex; align-items: center; padding: 20px; background: black; border-bottom: 1px solid #673AB7; }
@@ -480,6 +485,118 @@ h1 {
     font-weight: bold;
 }
 
+
+/* Subtle Counter Styling */
+.subtle-counter {
+    margin-top: 10px; /* Creates space between the counter and the text */
+    color: #b084ff; /* Soft purple tone */
+    font-size: 1em; /* Slightly smaller than the main text */
+    font-weight: bold; /* Highlight the text slightly */
+    text-align: center; /* Aligns the text centrally */
+}
+
+.subtle-counter span {
+    color: white; /* Make the number stand out */
+    font-size: 1.2em; /* Slightly larger font for the number */
+}
+
+/*For stories that touch */
+.pain-points-section {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pain-points-section h2 {
+    font-size: 2.5em;
+    color: #b084ff;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Reviews container styling */
+.reviews-container {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    max-height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.review {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold; /* Make text bold */
+}
+
+.review.active {
+    opacity: 1;
+    position: relative;
+}
+
+.review span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: bold; /* Bold author names too */
+    color: #b084ff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pain-points-section {
+        padding: 15px;
+    }
+
+    .pain-points-section h2 {
+        font-size: 2.2em;
+    }
+
+    .review {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .pain-points-section {
+        padding: 10px;
+    }
+
+    .pain-points-section h2 {
+        font-size: 2em;
+    }
+
+    .review {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .pain-points-section {
+        padding: 10px;
+    }
+
+    .pain-points-section h2 {
+        font-size: 1.8em;
+    }
+
+    .review {
+        font-size: 0.9em;
+    }
+}
+
+
 /* Default styling applies to large screens (1440px and above) */
 
 /* Base styles already included in your file, so now let's adjust for specific devices */
@@ -647,6 +764,13 @@ h1 {
  
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+@media (min-width: 769px) {
+    body {
+        max-width: 768px; /* Locks the design into a mobile-like layout */
+        margin: 0 auto;
+    }
+}
+
 .start-btn {
     position: relative;
     background: #333; /* Darker background */
@@ -682,6 +806,8 @@ h1 {
     transform: scale(0.96);
     box-shadow: inset 0px 0px 8px rgba(176, 84, 255, 0.4);
 }
+
+
     </style>
 </head>
 <body>
@@ -1171,7 +1297,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="community-text">
             <h1 style="font-size: 3em; color: #b084ff; margin-bottom: 10px;">Advanced Trip Planning </h1>
             <p style="font-size: 1.2em; line-height: 1.6; color: #888;">
-                Vyra Advanced allows travelers plan trips all the way from home to the bus park in few clicks of a button. <p style="font-size: 1.2em; line-height: 1.6; color: #888;">Travellers can find out how much to spend for trips, compare all services transiting to their specific location from their state and choose services based on priorities. Vyra Advanced trip offers a cab booking, taking travellers from home to transit station.
+                Vyra Advanced allows travelers plan trips all the way from home to the bus park in few clicks of a button. <p style="font-size: 1.2em; line-height: 1.6; color: #888;">Travellers can find out how much to spend for trips, compare all services transiting to their specific destination from their State and get terminal addresses. Vyra Advanced trip offers a cab booking, taking travellers from home to transit station.
             </p>
         </div>
         
@@ -1253,20 +1379,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     </script>
     
+    <section id="painPoints" class="pain-points-section">
+    <h2>Avoid Stories That Touch</h2>
+    <div class="reviews-container"></div>
+</section>
+
     <!-- Waitlist Section -->
 <div class="waitlist-section">
     <h2 style="color: #b084ff; font-size: 2.5em; margin-bottom: 20px;">Join the Future of Inter City Travel in Nigeria</h2>
     <p style="color: #888; font-size: 1.2em; margin-bottom: 40px;">
-        Vyra is going full in a couple of months. Be among the first to experience Vyra's full capabilities and get early access to Vyra's features free.
-    </p>
+        Vyra is going full in a couple of months. Be among the first to experience Vyra's full capabilities and get early access to Vyra's features free.  Receive weekly transport stats and reports.
+    </p> 
     <div class="waitlist-form">
         <!-- FormSubmit Integration -->
         <form id="waitlist-form" action="https://formsubmit.co/winnerukoh@gmail.com" method="POST">
             <!-- Hidden input to disable CAPTCHA -->
             <input type="hidden" name="_captcha" value="false">
+            
+            
+            <div id="engagement-stats" class="premium-counter">
+    <i class="fas fa-users"></i>
+    <span id="user-count">100</span> users have joined in the last 30 minutes 
+</div>
 
             <!-- Email input field with name attribute -->
             <input type="email" name="email" class="email-input" placeholder="Enter your email for exclusive access" required>
+
 
             <!-- Submit button -->
             <button type="submit" class="main-cta" style="width: 200px; font-size: 1.1em;">Notify Me</button>
@@ -1319,7 +1457,83 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="mailto:YouNetworkdev@hotmail.com" style="color: #b084ff; text-decoration: none;">Contact Vyra</a>
     </p>
     
+    <script>
+    // Simulate User Engagement Counter
+    document.addEventListener("DOMContentLoaded", function () {
+        const baseCount = 100; // Start with a base number
+        const maxIncrement = 20; // Maximum increment
+        const refreshInterval = 10000; // Refresh every 3 seconds
+
+        function updateUserCount() {
+            const userCountElement = document.getElementById("user-count");
+            const currentCount = parseInt(userCountElement.textContent, 10);
+            const newCount = currentCount + Math.floor(Math.random() * maxIncrement) + 1;
+            userCountElement.textContent = newCount.toLocaleString(); // Format as number
+        }
+
+        // Initialize count and update periodically
+        document.getElementById("user-count").textContent = baseCount.toLocaleString();
+        setInterval(updateUserCount, refreshInterval);
+    });
     
+   const reviews = [
+    { 
+        text: "Their customer service is so poor, their staff so mannerless and their drivers so reckless. Is a no no for me. I can't recommend for anybody, not even an enemy.", 
+        name: "Displeased Customer" 
+    },
+    { 
+        text: "My experience today is my most horrible travel experience. How can you hand over passengers by 10pm?", 
+        name: "Horrified Passenger" 
+    },
+    { 
+        text: "It's my first time traveling by [service] and I can't remember a worse experience on a journey in my over 30 years of sojourn. I'd consider myself wicked to recommend [service] to a loved one.", 
+        name: "Veteran Traveler" 
+    },
+    { 
+        text: "I almost lost my life by these useless company.. refund the money I spent in the hospital 😠", 
+        name: "Angry Customer" 
+    },
+    { 
+        text: "[Service] transport is the worst transport company in Nigeria, from their staff to drivers. I will never advise even my enemy to patronize [service].", 
+        name: "Bitter Traveler" 
+    },
+    { 
+        text: "[Service] leaves your passengers stranded on the road and does not care whatever happens.", 
+        name: "Stranded Passenger" 
+    },
+    { 
+        text: "I've never been this frustrated my whole life. I booked the third bus online yesterday (16/01/25) and on getting here, they were unable to find my bus - like the cashiers here were confused.", 
+        name: "Frustrated Customer" 
+    },
+];
+
+const reviewsContainer = document.querySelector(".reviews-container");
+
+// Dynamically add reviews to the container
+reviews.forEach((review, index) => {
+    const reviewDiv = document.createElement("div");
+    reviewDiv.className = "review";
+    reviewDiv.innerHTML = `
+        <p>"${review.text}"</p>
+        <span>— ${review.name}</span>
+    `;
+    if (index === 0) reviewDiv.classList.add("active"); // Set the first review as active
+    reviewsContainer.appendChild(reviewDiv);
+});
+
+// Function to rotate reviews
+let currentReviewIndex = 0;
+function showNextReview() {
+    const allReviews = document.querySelectorAll(".review");
+    allReviews[currentReviewIndex].classList.remove("active"); // Hide current review
+
+    currentReviewIndex = (currentReviewIndex + 1) % allReviews.length; // Move to the next review
+    allReviews[currentReviewIndex].classList.add("active"); // Show the next review
+}
+
+// Start rotating reviews every 8 seconds
+setInterval(showNextReview, 8000);
+</script>
 </div>
 </body>
 </html>
