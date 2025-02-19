@@ -309,7 +309,7 @@
     <!-- Upgrade Modal -->
     <div id="upgradeModal">
         <div class="modal-header">Upgrade Required</div>
-        <p>You've reached the limit of 5 trials. Please upgrade to continue.</p>
+        <p>You've reached the limit of 3 trials. Please upgrade to continue or start over.</p>
     </div>
 
     <!-- Results -->
@@ -329,23 +329,23 @@ const states = [
 // Transport Companies Mapped to States
 const transportCompaniesByState = {
     "Abia": {
-        Comfort: ["ABC Transport","Guo Transport","Young shall grow Transport"," Aba Line", "Chisco Transport","God is Good motors","Cross Country Transport","Nsik Motors(Aktc)","New Nyanya Transport Company","Adam and Eve Motors","Benue Link Transport","Libra Motors"],
-        Pricing: ["Young Shall Grow","Peace Mass Transit","Guo Transport","Benue Link transport","Libra Motors","Orizu Motors","Imo Transport (itc)"],
-        Safety: ["ABC Transport","Guo Transport","Young Shall gtow transport","Chisco Transport"],
-        Affordable: ["Peace Mass Transit","Young shall grow","Aba Line","Cross country Transport","Orizu Motors"],
-        Quick: ["Libra Motors","Guo Transport","Abc Transport","God is Good motors","Nsik Motors(Aktc)"],
-        CustomerService: ["Libra Motors","Abc Transport","Guo Transport","Young shall grow transport","Aba Line"]
+        Comfort: ["Abc transport","Guo transport","Young shall grow transport"," Aba Line", "Chisco transport","God is good motors","Cross country transport","Nsik motors(Aktc)","New Nyanya Transport Company","Adam and eve motors","Benue links Transport","Libra motors"],
+        Pricing: ["Young shall transport","Peace mass transit","Guo transport","Benue links transport","Libra motors","Orizu Motors","Imo transport (itc)"],
+        Safety: ["Abc transport","Guo transport","Young shall grow transport","Chisco transport"],
+        Affordable: ["Peace mass Transit","Young shall grow transport","Aba line","Cross country transport","Orizu motors"],
+        Quick: ["Libra motors","Guo transport","Abc transport","God is good motors","Nsik Motors(Aktc)"],
+        CustomerService: ["Libra motors","Abc transport","Guo transport","Young shall grow transport","Aba Line"]
     },
     "Adamawa": {
-        Comfort: ["Guo Transport","Young shall grow Transport","Chisco Transport"],
-        Pricing: ["Young Shall Grow Transport"],
-        Safety: ["Guo Transport","Fair okis transport"],
+        Comfort: ["Guo transport","Young shall grow transport","Chisco transport"],
+        Pricing: ["Young shall grow transport"],
+        Safety: ["Guo transport","Fair plus transport"],
         Affordable: ["Fair plus transport"],
         Quick: ["Peace Mass Transit","Akwa ibom transport (Aktc)"],
-        CustomerService: ["God is Good Motors","Young shall grow motors","Guo transport"]
+        CustomerService: ["God is good motors","Young shall transport","Guo transport"]
     },
     "Akwa Ibom": {
-        Comfort: ["Chisco Transport","God is Good motors","Peace mass transit","Abc transport","Nsik motors(Aktc)"],
+        Comfort: ["Chisco transport","God is good motors","Peace mass transit","Abc transport","Nsik motors(Aktc)"],
         Pricing: ["Peace mass transit","Cross country transport","Chisco transport","Big Joe motors"],
         Safety: ["Abc transport","God is good motors","Nsik motors(Aktc)"],
         Affordable: ["Peace Mass transit","Cross country transport","Abc transport","God is good motors"],
@@ -353,15 +353,15 @@ const transportCompaniesByState = {
         CustomerService: ["Peace Mass Transit","God is good motors","Abc Transport","Chicso transport"]
     },
     "Anambra": {
-        Comfort: ["God is Good Motors", "ABC transport","Benue link transport","Agofure motors","E.Ekesons bros transport","Goodness and mercy transport","Okeyson motors","Tracas Nigeria","Auto star limited"],
-        Pricing: ["Young Shall Grow motors","Anambra Express","Ekene dili chukwu express limited","Agofure motors","Benue links transport","okeyson motors","Peace mass transit","Goodness and mercy transport"],
-        Safety: ["God is Good motors","Abc transport","Chisco transport","Nsik motors(Aktc)","Young shall grow motors","E.Ekesons limited","Interland transport"],
+        Comfort: ["God is good motors", "Abc transport","Benue link transport","Agofure motors","E.Ekesons bros transport","Goodness and mercy transport","Okeyson motors","Tracas Nigeria","Auto star limited"],
+        Pricing: ["Young shall transport","Anambra Express","Ekene dili chukwu express limited","Agofure motors","Benue links transport","okeyson motors","Peace mass transit","Goodness and mercy transport"],
+        Safety: ["God is good motors","Abc transport","Chisco transport","Nsik motors(Aktc)","Young shall transport","E.Ekesons limited","Interland transport"],
         Affordable: ["Anambra express motors","Nothing pass God motors","Abc transport","Nsik motors(Aktc)","Tracas Nigeria","Auto star motors","Okeyson motors","E.Ekesons bros transport","God is good motors","Chisco transport"],
-        Quick: ["Guo transport","Abc transport","Nsik motors(Aktc)","God is good motors","Anambra express motors","God is good motors","Young shall grow motors"],
-        CustomerService: ["God is Good Motors","Chisco transport","Abc transport","Guo transport","Nsik motors","Anambra express","Interland transport","Goodness and mercy transport","Benue links transport"]
+        Quick: ["Guo transport","Abc transport","Nsik motors(Aktc)","God is good motors","Anambra express motors","God is good motors","Young shall transport"],
+        CustomerService: ["God is good motors","Chisco transport","Abc transport","Guo transport","Nsik motors","Anambra express","Interland transport","Goodness and mercy transport","Benue links transport"]
     },
     "Bauchi": {
-        Comfort: ["Guo Transport","Abc Transport", "Benue links transport","Yankari express"],
+        Comfort: ["Guo transport","Abc transport", "Benue links transport","Yankari express"],
         Pricing: ["Peace Mass Transit","Young shall grow transport","Gombe line","Yankari express"],
         Safety: ["Guo transport","Abc transport","Gombe line","Benue links transport","Cross country transport"],
         Affordable: ["Benue links transport","Peace mass transit","Gombe line","Yankari express"],
@@ -369,272 +369,276 @@ const transportCompaniesByState = {
         CustomerService: ["Young shall grow transport","Abc transport","Cross country transport","Benue links transport"]
     },
     "Bayelsa": {
-        Comfort: ["God is Good Motors","Abc transport","Agofure motors","Delta line"],
+        Comfort: ["God is good motors","Abc transport","Agofure motors","Delta line"],
         Pricing: ["Peace mass transit","Agofure motors","Balyesa state transport"],
         Safety: ["Good is good motors","Abc transport","Chisco transport","Delta line"],
         Affordable: ["Delta Line","Abc transport","God is good","Balyesa state transport","Agofure motors"],
         Quick: ["Delta line","Good is good motors","Peace mass transit"],
-        CustomerService: ["God is Good Motors","Abc transport","God is good motors","Balyesa state motors"]
+        CustomerService: ["God is good motors","Abc transport","God is good motors","Balyesa state motors"]
     },
     "Benue": {
-        Comfort: ["ABC Transport","God is good","Guo transport",],
-        Pricing: ["GUO Transport","Peace mass transit","Young shall grow motors"],
-        Safety: ["Abc transport","Young shall grow motors","God is good motors"],
+        Comfort: ["Abc transport","God is good","Guo transport",],
+        Pricing: ["Guo transport","Peace mass transit","Young shall transport"],
+        Safety: ["Abc transport","Young shall transport","God is good motors"],
         Affordable: ["Peace Mass Transit","Orizu motors","The young legacy motors","Benue links transport"],
         Quick: ["God is good","Benue links transport"],
-        CustomerService: ["ABC Transport","Benue links transport","Young shall grow motors","Guo transport","God is good motors"]
+        CustomerService: ["Abc transport","Benue links transport","Young shall transport","Guo transport","God is good motors"]
     },
     "Borno": {
         Comfort: ["Borno express","Guo transport"],
-        Pricing: ["Gombe line","Peace mass transit"],
+        Pricing: ["Gombe line","Peace mass transpit"],
         Safety: ["Borno express","Guo transport"],
         Affordable: ["Peace Mass Transit","Cross country transport"],
         Quick: ["Cross country transport"],
         CustomerService: ["Peace Mass Transit","Guo transport","Gombe line"]
     },
     "Cross River": {
-        Comfort: ["God is Good Motors"],
-        Pricing: ["GUO Transport"],
-        Safety: ["Faith Motors"],
-        Affordable: ["Delta Line"],
-        Quick: ["Peace Mass Transit"],
-        CustomerService: ["God is Good Motors"]
+        Comfort: ["Big joe motors","Abc transport","Cross country transport","Nsik motors(Aktc)","Benue links transport","Edo line","Guo transport"],
+        Pricing: ["Peace mass transit","Big joe motors","Edo line","Young shall grow transport","Agofure motors","On the dot transport"],
+        Safety: ["Guo transport","Agofure motors","Young shall grow","Big joe motors","Abc transport","Nsik motors"],
+        Affordable: ["Guo transport","Edo line","Big joe motors","Benue links transport","Cross country transport"],
+        Quick: ["Peace Mass Transit","Agofure motors","Young shall grow transport"],
+        CustomerService: ["Guo transport","Nsik motors(Aktc)","Benue links transport","Big joe motors","Cross country transport"]
     },
     "Delta": {
-        Comfort: ["ABC Transport"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["Abc transport"],
+        Pricing: ["Young shall grow"],
         Safety: ["Ibom Transit"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["ABC Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Abc transport"]
     },
     "Ebonyi": {
-        Comfort: ["Chisco Transport"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["Chisco transport"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Delta Line"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["Chisco Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Chisco transport"]
     },
     "Edo": {
-        Comfort: ["God is Good Motors"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["God is good motors"],
+        Pricing: ["Young shall grow"],
         Safety: ["Ibom Transit"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["God is Good Motors"]
+        Quick: ["Libra motors"],
+        CustomerService: ["God is good motors"]
     },
     "Ekiti": {
-        Comfort: ["ABC Transport"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["Abc transport"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["ABC Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Abc transport"]
     },
     "Enugu": {
-        Comfort: ["ABC Transport"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["Abc transport"],
+        Pricing: ["Young shall grow"],
         Safety: ["Glo Bus Transit"],
         Affordable: ["Fellow Transport"],
         Quick: ["Tega Express"],
-        CustomerService: ["ABC Transport"]
+        CustomerService: ["Abc transport"]
     },
     "Gombe": {
-        Comfort: ["Chisco Transport"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["Chisco transport"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["Chisco Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Chisco transport"]
     },
     "Imo": {
-        Comfort: ["God is Good Motors"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["God is good motors"],
+        Pricing: ["Young shall grow"],
         Safety: ["Ibom Transit"],
         Affordable: ["Delta Line"],
         Quick: ["Peace Mass Transit"],
-        CustomerService: ["God is Good Motors"]
+        CustomerService: ["God is good motors"]
     },
     "Jigawa": {
-        Comfort: ["ABC Transport"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["Abc transport"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["ABC Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Abc transport"]
     },
     "Kaduna": {
-        Comfort: ["Chisco Transport"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["Chisco transport"],
+        Pricing: ["Young shall grow"],
         Safety: ["Ibom Transit"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
+        Quick: ["Libra motors"],
         CustomerService: ["Peace Mass Transit"]
     },
     "Kano": {
-        Comfort: ["God is Good Motors"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["God is good motors"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Delta Line"],
         Quick: ["Peace Mass Transit"],
-        CustomerService: ["God is Good Motors"]
+        CustomerService: ["God is good motors"]
     },
     "Katsina": {
-        Comfort: ["ABC Transport"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["Abc transport"],
+        Pricing: ["Young shall grow"],
         Safety: ["Ibom Transit"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["ABC Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Abc transport"]
     },
     "Kebbi": {
-        Comfort: ["Chisco Transport"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["Chisco transport"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Delta Line"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["Chisco Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Chisco transport"]
     },
     "Kogi": {
-        Comfort: ["God is Good Motors"],
-        Pricing: ["Young Shall Grow"],
+        Comfort: ["God is good motors"],
+        Pricing: ["Young shall grow"],
         Safety: ["Ibom Transit"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["God is Good Motors"]
+        Quick: ["Libra motors"],
+        CustomerService: ["God is good motors"]
     },
     "Kwara": {
-        Comfort: ["ABC Transport"],
-        Pricing: ["GUO Transport"],
+        Comfort: ["Abc transport"],
+        Pricing: ["Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Delta Line"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["ABC Transport"]
+        Quick: ["Libra motors"],
+        CustomerService: ["Abc transport"]
     },
     "Lagos": {
-        Comfort: ["God is Good Motors", "Chisco Transport"],
-        Pricing: ["Young Shall Grow", "GUO Transport"],
+        Comfort: ["God is good motors", "Chisco transport"],
+        Pricing: ["Young shall grow", "Guo transport"],
         Safety: ["Faith Motors"],
         Affordable: ["Peace Mass Transit"],
-        Quick: ["Libra Motors"],
-        CustomerService: ["God is Good Motors"]
+        Quick: ["Libra motors"],
+        CustomerService: ["God is good motors"]
     },
    
 "Nasarawa": {
-    Comfort: ["ABC Transport"],
-    Pricing: ["GUO Transport"],
+    Comfort: ["Abc transport"],
+    Pricing: ["Guo transport"],
     Safety: ["Faith Motors"],
     Affordable: ["Delta Line"],
     Quick: ["Peace Mass Transit"],
-    CustomerService: ["ABC Transport"]
+    CustomerService: ["Abc transport"]
 },
 "Niger": {
-    Comfort: ["Chisco Transport"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["Chisco transport"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Peace Mass Transit"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["Chisco Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Chisco transport"]
 },
 "Ogun": {
-    Comfort: ["God is Good Motors"],
-    Pricing: ["GUO Transport"],
+    Comfort: ["God is good motors"],
+    Pricing: ["Guo transport"],
     Safety: ["Faith Motors"],
     Affordable: ["Delta Line"],
     Quick: ["Peace Mass Transit"],
-    CustomerService: ["God is Good Motors"]
+    CustomerService: ["God is good motors"]
 },
 "Ondo": {
-    Comfort: ["ABC Transport"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["Abc transport"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Peace Mass Transit"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["ABC Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Abc transport"]
 },
 "Osun": {
-    Comfort: ["Chisco Transport"],
-    Pricing: ["GUO Transport"],
+    Comfort: ["Chisco transport"],
+    Pricing: ["Guo transport"],
     Safety: ["Faith Motors"],
     Affordable: ["Delta Line"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["Chisco Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Chisco transport"]
 },
 "Oyo": {
-    Comfort: ["God is Good Motors"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["God is good motors"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Peace Mass Transit"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["God is Good Motors"]
+    Quick: ["Libra motors"],
+    CustomerService: ["God is good motors"]
 },
 "Plateau": {
-    Comfort: ["ABC Transport"],
-    Pricing: ["GUO Transport"],
+    Comfort: ["Abc transport"],
+    Pricing: ["Guo transport"],
     Safety: ["Faith Motors"],
     Affordable: ["Delta Line"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["ABC Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Abc transport"]
 },
 "Rivers": {
-    Comfort: ["God is Good Motors"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["God is good motors"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Peace Mass Transit"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["God is Good Motors"]
+    Quick: ["Libra motors"],
+    CustomerService: ["God is good motors"]
 },
 "Sokoto": {
-    Comfort: ["Chisco Transport"],
-    Pricing: ["GUO Transport"],
+    Comfort: ["Chisco transport"],
+    Pricing: ["Guo transport"],
     Safety: ["Faith Motors"],
     Affordable: ["Delta Line"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["Chisco Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Chisco transport"]
 },
 "Taraba": {
-    Comfort: ["ABC Transport"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["Abc transport"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Peace Mass Transit"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["ABC Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Abc transport"]
 },
 "Yobe": {
-    Comfort: ["God is Good Motors"],
-    Pricing: ["GUO Transport"],
+    Comfort: ["God is good motors"],
+    Pricing: ["Guo transport"],
     Safety: ["Faith Motors"],
     Affordable: ["Delta Line"],
     Quick: ["Peace Mass Transit"],
-    CustomerService: ["God is Good Motors"]
+    CustomerService: ["God is good motors"]
 },
 "Zamfara": {
-    Comfort: ["Chisco Transport"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["Chisco transport"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Peace Mass Transit"],
-    Quick: ["Libra Motors"],
-    CustomerService: ["Chisco Transport"]
+    Quick: ["Libra motors"],
+    CustomerService: ["Chisco transport"]
 },
 "Abuja": {
-    Comfort: ["God is Good Motors", "ABC Transport"],
-    Pricing: ["Young Shall Grow"],
+    Comfort: ["God is good motors", "Abc transport"],
+    Pricing: ["Young shall grow"],
     Safety: ["Ibom Transit"],
     Affordable: ["Delta Line"],
     Quick: ["Peace Airk"],
-    CustomerService: ["God is Good Motors"]
+    CustomerService: ["God is good motors"]
 }
 };
 
 // Transport Company Images
 const companyImages = {
-    "Chisco Transport": "https://i.ibb.co/b7Yykmb/images-12.png",
-    "God is Good Motors": "https://i.ibb.co/dKmkMGJ/images-11.png",
-    "ABC Transport": "https://via.placeholder.com/50?text=ABC",
-    "Young Shall Grow": "https://via.placeholder.com/50?text=YSG",
-    "Peace Mass Transit": "https://i.ibb.co/5hXDcq5/images-7.png",
-    "GUO Transport": "https://via.placeholder.com/50?text=GUO"
+    "Chisco transport": "https://i.ibb.co/b7Yykmb/images-12.png",
+    "God is good motors": "https://i.ibb.co/dKmkMGJ/images-11.png",
+    "Abc transport": "https://i.ibb.co/fYdCbgt4/365135626-681294977378345-18477671253756825-n.jpg",
+    "Young shall transport": "https://i.ibb.co/qM33mSj6/rseqpwlnz8ew31kak0jd.jpg",
+    "Peace mass transit": "https://i.ibb.co/5hXDcq5/images-7.png",
+    "Guo transport": "https://i.ibb.co/7tzQxvTC/eaykbcffalz28kc08mc5.jpg",
+    "Libra motors":
+    "https://i.ibb.co/wKRrKtp/test-10.png"
+    
+    
 };
 
 // Function to populate dropdowns
@@ -778,8 +782,9 @@ submitButton.addEventListener("click", () => {
         resultsDiv.innerHTML += checkAgainButton;
     }, 6000);
 });
+
 function getRandomPrice(companyName) {
-    if (!companyName) return 25000; // Default fallback price
+    if (!companyName) return 48000; // Default fallback price
 
     let today = new Date();
     let baseDay = Math.floor(today.getTime() / (1000 * 60 * 60 * 24 * 2)); // Changes every 2 days
@@ -801,7 +806,7 @@ function getRandomPrice(companyName) {
         } else {
             // Generate a company-specific base price with more variation
             let companySeed = companyName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-            let basePrice = 22000 + (companySeed % 8000); // Each company has its own starting point
+            let basePrice = 29000 + (companySeed % 9000); // Each company has its own starting point
             let randomOffset = Math.floor(Math.random() * 3000) - 1500; // Add slight randomness
             newPrice = Math.min(32000, Math.max(20000, basePrice + randomOffset));
         }
